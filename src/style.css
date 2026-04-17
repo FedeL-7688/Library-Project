@@ -1,0 +1,11 @@
+#bookshelf{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,200px));
+    grid-template-rows: repeat(auto-fill,minmax(100px,270px));
+    gap: 15px;
+}
+.item{
+    background-color: aqua;
+    padding: 15px;
+    
+}
