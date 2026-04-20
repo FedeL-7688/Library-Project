@@ -1,4 +1,7 @@
 
+import { bookLimit } from './cst-val-API.js';
+import './style.css'
+
 function checkState(element) {
   return element
     ? "The book has been read ✔️"
@@ -17,6 +20,7 @@ function idGenerator(key) {
 }
 
 function removeBook(id) {
+  
   const index = library.findIndex((book) => book.id === id);
 
   if (index !== -1) {
@@ -40,10 +44,10 @@ class Book {
 }
 
 
-library = [];
+let library = [];
 
 function addBookToLibrary(title, author, pages, readState) {
-  book = new Book(title, author, pages, readState);
+ let book = new Book(title, author, pages, readState);
   library.push(book);
 }
 
@@ -53,7 +57,7 @@ addBookToLibrary("La Odisea", "Homero", "600", false);
 addBookToLibrary("La Puta Vida", "Jordi Wild", "150", false);
 console.table(library);
 
-bookshelf = document.querySelector("#bookshelf");
+let bookshelf = document.querySelector("#bookshelf");
 
 function runAround(array) {
   bookshelf.innerHTML = "";
@@ -94,19 +98,21 @@ function runAround(array) {
 
 runAround(library);
 
-openDiag = document.querySelector("#openDiag");
-closeDiag = document.querySelector("#closeDiag");
-form = document.querySelector("#form");
+let openDiag = document.querySelector("#openDiag");
+let closeDiag = document.querySelector("#closeDiag");
+let form = document.querySelector("#form");
 openDiag.addEventListener("click", () => form.show());
 closeDiag.addEventListener("click", () => form.close());
 
-bookName = document.querySelector("#book");
-bookAuthor = document.querySelector("#author");
-bookPages = document.querySelector("#pages");
-bookRead = document.querySelector("#read");
+let bookName = document.querySelector("#book");
+let bookAuthor = document.querySelector("#author");
+let bookPages = document.querySelector("#pages");
+let bookRead = document.querySelector("#read");
 
-loadBook = document.querySelector("#loadBook");
-loadBook.addEventListener("click", () => {
+let loadBook = document.querySelector("#loadBook");
+loadBook.addEventListener("click", (event) => {
+event.preventDefault()
+// bookLimit()
   addBookToLibrary(
     bookName.value,
     bookAuthor.value,

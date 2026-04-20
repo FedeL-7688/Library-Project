@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from'html-webpack-plugin';
 
 export default {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/script.js',
   output: {
     filename: 'main.js',
     path: path.resolve(import.meta.dirname, 'dist'),
@@ -13,6 +13,10 @@ export default {
   devServer: {
     static: './dist',
     watchFiles: ['./src/template.html'],
+    allowedHosts: 'all', // Permite conexiones de desarrollo
+    client: {
+      overlay: true, // Muestra errores en pantalla
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,4 +1,6 @@
 {
+  
+   
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "css-loader": "^7.1.4",
@@ -12,6 +14,7 @@
   },
   "name": "template",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -289,6 +292,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "license": "ISC"
 }
