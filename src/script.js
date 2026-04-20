@@ -1,7 +1,3 @@
-//class object conversion
-//step 1: recognize the book object and transform it into class
-//step 2: create the constructor inside the class so all the info for every book is reserved there.
-//step 3: create the functions in the class field beneath the constructor to work with the book constructor
 
 function checkState(element) {
   return element
