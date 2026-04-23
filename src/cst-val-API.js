@@ -10,7 +10,14 @@ function bookLimit(){
    console.log(text)
  }
 
+function isRequired(el){
+  if (el.valueMissing){
+    el.setCustomValidity("This field is required");
+  }
+ else{el.setCustomValidity("");
+ }
+}
 
 bookTitle.check
 
-export{bookLimit}
+export{bookLimit, isRequired}

@@ -1,5 +1,5 @@
 
-import { bookLimit } from './cst-val-API.js';
+import { bookLimit, isRequired } from './cst-val-API.js';
 import './style.css'
 
 function checkState(element) {
@@ -112,8 +112,12 @@ let bookRead = document.querySelector("#read");
 let loadBook = document.querySelector("#loadBook");
 loadBook.addEventListener("click", (event) => {
 event.preventDefault()
-// bookLimit()
-  addBookToLibrary(
+bookLimit()
+isRequired(bookName)
+isRequired(bookAuthor)
+isRequired(bookPages)
+
+addBookToLibrary(
     bookName.value,
     bookAuthor.value,
     bookPages.value,
