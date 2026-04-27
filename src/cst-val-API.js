@@ -1,7 +1,7 @@
-let bookTitle = document.querySelector("#book")
 
 
-function bookLimit(){
+
+function bookLimit(bookTitle){
  
    let text = "all good";
    if (bookTitle.validity.tooLong){
@@ -10,14 +10,20 @@ function bookLimit(){
    console.log(text)
  }
 
+
+
 function isRequired(el){
-  if (el.valueMissing){
-    el.setCustomValidity("This field is required");
+  if (el.validity.valueMissing){
+    el.setCustomValidity("This field is required,asshole")
+    el.reportValidity()
+    return false
   }
  else{el.setCustomValidity("");
+  return true
  }
 }
 
-bookTitle.check
+
+
 
 export{bookLimit, isRequired}

@@ -112,11 +112,14 @@ let bookRead = document.querySelector("#read");
 let loadBook = document.querySelector("#loadBook");
 loadBook.addEventListener("click", (event) => {
 event.preventDefault()
-bookLimit()
-isRequired(bookName)
-isRequired(bookAuthor)
-isRequired(bookPages)
 
+bookLimit(bookName)
+
+if(!isRequired(bookName) ||
+!isRequired(bookAuthor) ||
+!isRequired(bookPages)){
+return
+}
 addBookToLibrary(
     bookName.value,
     bookAuthor.value,
@@ -126,3 +129,4 @@ addBookToLibrary(
   runAround(library);
   form.close();
 });
+
