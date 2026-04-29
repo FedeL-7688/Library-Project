@@ -17,11 +17,11 @@
         
         <form action="" method="post">
             <label for="book" >Book</label>
-            <input type="text" id="book" placeholder="Don quijote de La Mancha" maxlength="25" required>
+            <input type="text" id="book" placeholder="Don quijote de La Mancha" minlength="5" maxlength="25" pattern="[A-Za-z]+"  required>
             <label for="author">Author</label>
-            <input type="text" id="author" placeholder="Cervantes" required>
+            <input type="text" id="author" placeholder="Cervantes"  minlength="10" pattern="[A-Za-z]+"  required>
             <label for="pages"># of pages</label>
-            <input id="pages" type="number" placeholder="666" required>
+            <input id="pages" type="number" placeholder="666" required min="1">
             <label for="read">
             <input type="checkbox" name="read" id="read">
             have you read the book?
